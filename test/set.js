@@ -16,5 +16,18 @@ buster.testCase("Set", {
         var hash = {"a":1, "b":2};
         var set = new Set(hash);
         assert.equals(set.toHash(), hash);
+    },
+    "subset()": function() {
+        var set = new Set({
+            "count-1": 1,
+            "count-2": 2,
+            "irrelevant": 3
+        });
+
+        assert.equals(
+            set.subset(/^count-/).toHash(),
+            {"count-1": 1, "count-2": 2},
+            "Subset contains only keys matching ^count-"
+        );
     }
 });

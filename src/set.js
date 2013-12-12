@@ -7,7 +7,9 @@ Set.prototype = {
     subset: function(regexp) {
         var result = {};
         for(var key in this.items) {
-            
+            if( key.match(regexp) ) {
+                result[key] = this.items[key];
+            }
         }
         return new Set(result);
     },
