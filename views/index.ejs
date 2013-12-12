@@ -8,6 +8,8 @@
   <% _.each(nodestat.widgets, function(widget) { %>
     <h2><%= widget.name %></h2>
 
+    <%- widget.process(nodestat.stat()) %>
+
   <% }); %>
 
 
