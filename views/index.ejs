@@ -1,0 +1,11 @@
+<%= hostname %>
+
+
+
+
+<ul>
+<% for(var i=0; i<nodestat.widgets.length; i++) {%>
+   <li><%= nodestat.widgets[i].html() %></li>
+<% } %>
+</ul>
+

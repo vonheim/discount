@@ -1,5 +1,42 @@
 
 
+var nodestat = require("nodestat")
+
+nodestat.addWidget(new nodestat.KeysWidget({match:/count-/}));
+
+var stat = nodestat.stat("default");
+stat.add("counter");
+stat.add("counter", 2);
+
+
+
+
+Storage
+ - add
+ - set
+ - clear
+ - toHash(cb)
+ - subset(regexp, cb) // Kaller cb(null, new Set());
+
+MemoryStorage
+
+PersistentStorage
+
+Templates:
+
+ - template får nodestat
+   - clone stat
+   - iterer widgets
+     - widget.process(stat)
+     - relevant = stat.subset(/widget.match/)
+
+-----------------
+
+
+Namespacing - kan vente
+PersistentStorage - kan vente
+HTTP server - viktig
+
 
 
 nodestat.Set

@@ -1,9 +1,22 @@
+"use strict";
+var _ = require('underscore');
+
 function Set(items) {
     this.items = items || {};
 }
 
 
 Set.prototype = {
+    set: function(key, value) {
+        this.items[key] = value;
+    },
+    add: function(key, value) {
+        this.items[key] += value;
+    },
+    get: function(key) {
+        return this.items[key];
+    },
+
     subset: function(regexp) {
         var result = {};
         for(var key in this.items) {
@@ -20,6 +33,9 @@ Set.prototype = {
         var size = 0, key;
         for (key in this.items) size++;
         return size;
+    },
+    sortedKeys: function() {
+        return _.keys(this.items).sort();
     },
     toString: function() {
         return "Set of "+this.size()+" items";

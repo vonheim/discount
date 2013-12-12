@@ -1,0 +1,17 @@
+
+
+
+List template
+
+
+<ul>
+<% _.each(set.sortedKeys(), function(key) { %>
+
+  <%= key %> - <%= set.get(key) %>
+
+<% }) %>
+
+
+</ul>
+
+
