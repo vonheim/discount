@@ -9,7 +9,7 @@ buster.testCase("Set", {
         assert(set);
     },
     "size()": function() {
-        var set = new Set({a:1, b:2});
+        var set = new Set({"a":1, "b":2});
         assert.equals(set.size(), 2);
     }
 });
