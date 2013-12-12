@@ -19,18 +19,17 @@ function NodeStat() {
 }
 
 NodeStat.prototype = {
+    widget: {
+        List: List
+    },
+
     widgets: [],
     stats: {
         "default": new Set()
     },
-    widget: {
-        List: List
-    },
+
     stat: function(name) {
         return this.stats[name || "default"];
-    },
-    setWidgets: function(widgets) {
-        this.widgets = widgets;
     }
 }
 
