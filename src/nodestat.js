@@ -1,4 +1,5 @@
 "use strict";
+var _ = require('underscore');
 
 var List = require('./widget.list.js'),
     Set  = require('./set.js'),
@@ -10,7 +11,7 @@ function NodeStat() {
     var self = this;
 
     app.get('/', function(req, res) {
-        res.render('index', {nodestat:self, hostname: require('os').hostname()});
+        res.render('index', {nodestat: self, "_": _ });
     });
 
     var server = http.createServer(app).listen(app.get('port'), function() {
@@ -23,7 +24,7 @@ NodeStat.prototype = {
         List: List
     },
 
-    widgets: [new List()],
+    widgets: [new List({name:"All keys"})],
     stats: {
         "default": new Set()
     },

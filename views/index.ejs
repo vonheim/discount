@@ -5,6 +5,11 @@
     <img src="/img/stats.jpg" />
 
 
+  <% _.each(nodestat.widgets, function(widget) { %>
+    <h2><%= widget.name %></h2>
+
+  <% }); %>
+
 
   </body>
 </html>

@@ -6,7 +6,8 @@ var Widget = require('./widget.js'),
 
 
 function List(args) {
-    this.args = args || {};
+    args = args || {};
+    this.name = args.name;
     this.type = 'list';
 }
 
