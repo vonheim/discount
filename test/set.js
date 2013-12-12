@@ -12,6 +12,13 @@ buster.testCase("Set", {
         var set = new Set({"a":1, "b":2});
         assert.equals(set.size(), 2);
     },
+    "add()": function() {
+        var set = new Set();
+        set.add("total");
+        assert.equals(set.toHash(), {"total": 1});
+        set.add("total", 3);
+        assert.equals(set.toHash(), {"total": 4});
+    },
     "toHash()": function() {
         var hash = {"a":1, "b":2};
         var set = new Set(hash);

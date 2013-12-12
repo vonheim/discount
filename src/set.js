@@ -11,7 +11,8 @@ Set.prototype = {
         this.items[key] = value;
     },
     add: function(key, value) {
-        this.items[key] += value;
+        if( !this.items[key] ) this.items[key] = 0;
+        this.items[key] += value || 1;
     },
     get: function(key) {
         return this.items[key];
