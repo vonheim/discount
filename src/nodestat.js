@@ -1,9 +1,9 @@
 "use strict";
 
-var MemoryStorage = require('./memorystorage.js'),
-    List          = require('./widget.list.js'),
-    app           = require('./express.js'),
-    http          = require('http');
+var List = require('./widget.list.js'),
+    Set  = require('./set.js'),
+    app  = require('./express.js'),
+    http = require('http');
 
 
 function NodeStat() {
@@ -21,10 +21,7 @@ function NodeStat() {
 NodeStat.prototype = {
     widgets: [],
     stats: {
-        "default": new MemoryStorage()
-    },
-    storage: {
-        MemoryStorage: MemoryStorage
+        "default": new Set()
     },
     widget: {
         List: List
