@@ -29,5 +29,9 @@ buster.testCase("Set", {
             {"count-1": 1, "count-2": 2},
             "Subset contains only keys matching ^count-"
         );
+    },
+    "toString()": function() {
+        var set = new Set({"a": 1});
+        assert.equals(set.toString(), "Set of 1 items");
     }
 });

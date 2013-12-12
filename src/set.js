@@ -22,7 +22,7 @@ Set.prototype = {
         return size;
     },
     toString: function() {
-        return 'TODO';
+        return "Set of "+this.size()+" items";
     }
 };
 
