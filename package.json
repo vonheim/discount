@@ -1,0 +1,17 @@
+{
+  "name": "nodestat",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "buster": ">=0.7.8"
+  },
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "buster-test"
+  },
+  "author": "",
+  "license": "BSD"
+}

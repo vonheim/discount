@@ -1,0 +1,74 @@
+
+
+
+
+nodestat.Set
+ - Set = subset(regexp)
+ - asHash()
+ - toString() # "Set of <n> entries"
+
+
+
+
+NodeStat({storage:storage})
+
+
+stat.add('total');
+stat.add('total', -2);
+stat.set('total', 0);
+stat.clear('total-.*')
+
+[] = stat.toCounters(match);
+
+stat.config
+  // widget: "PieChart"
+  // match: "^category-\d"
+  // name: Categories
+
+
+
+
+stat.widgets // array over visualiserings widgets
+ = [ new nodestat.widget.PieChart({match: "category-\d"}), ... ]
+Default [new nodestat.widget.List({match: ".*"})]
+
+
+nodestat.widget.Widget = function(args) {
+  this.match = args.match || die "Must provide match?";
+}
+
+nodestat.widget.Widget.process = function(counters) {
+    var relevantCounters = counters.subset(self.match);
+    
+    foreach (counter) {
+        
+    }
+
+}
+
+
+stat.match // [  {value: 21, key: 'category-1', match:[1]} ...
+
+
+Counter
+ - name
+ - value
+
+
+
+
+Keys
+ - match
+
+
+
+URLS:
+
+/     # formatted
+/json # dump all
+
+
+Ignorelist:
+ - Blacklist regexper. Kan vises med /<regexp>/: antall treff (hvis treff >0)
+
+
