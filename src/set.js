@@ -11,7 +11,7 @@ Set.prototype = {
         }
         return new Set(result);
     },
-    asHash: function() {
+    toHash: function() {
         return this.items;
     },
     size: function() {
@@ -19,7 +19,6 @@ Set.prototype = {
         for (key in this.items) size++;
         return size;
     },
-
     toString: function() {
         return 'TODO';
     }
