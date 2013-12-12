@@ -23,7 +23,7 @@ NodeStat.prototype = {
         List: List
     },
 
-    widgets: [new nodestat.widget.List()],
+    widgets: [new List()],
     stats: {
         "default": new Set()
     },
