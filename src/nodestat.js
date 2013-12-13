@@ -3,6 +3,7 @@ var _ = require('underscore');
 
 var List     = require('./widget.list.js'),
     PieChart = require('./widget.piechart.js'),
+    BarChart = require('./widget.barchart.js'),
     Set      = require('./set.js'),
     app      = require('./express.js'),
     http     = require('http');
@@ -23,7 +24,8 @@ function NodeStat() {
 NodeStat.prototype = {
     widget: {
         "List": List,
-        "PieChart": PieChart
+        "PieChart": PieChart,
+        "BarChart": BarChart
     },
 
     widgets: [new List({name:"All keys"})],
