@@ -5,12 +5,12 @@
   <body>
 
 
-  <% _.each(nodestat.widgets, function(widget, widgetIndex) { %>
+  <% _.each(discount.widgets, function(widget, widgetIndex) { %>
     <% if( widget.name ) { %>
       <h2><%= widget.name %></h2>
     <% } %>
 
-    <%- widget.process(nodestat.stat(), widgetIndex) %>
+    <%- widget.process(discount.stat(), widgetIndex) %>
 
   <% }); %>
 

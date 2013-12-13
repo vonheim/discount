@@ -9,19 +9,19 @@ var List     = require('./widget.list.js'),
     http     = require('http');
 
 
-function NodeStat() {
+function Discount() {
     var self = this;
 
     app.get('/', function(req, res) {
-        res.render('index', {nodestat: self, "_": _ });
+        res.render('index', {discount: self, "_": _ });
     });
 
     var server = http.createServer(app).listen(app.get('port'), function() {
-        console.log("Nodestat running on http://localhost:"+ app.get('port') +"/");
+        console.log("Discount running on http://localhost:"+ app.get('port') +"/");
     });
 }
 
-NodeStat.prototype = {
+Discount.prototype = {
     widget: {
         "List": List,
         "PieChart": PieChart,
@@ -39,4 +39,4 @@ NodeStat.prototype = {
 }
 
 
-module.exports = new NodeStat();
+module.exports = new Discount();

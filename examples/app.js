@@ -1,4 +1,4 @@
-var stat = require('./configured-nodestat.js');
+var stat = require('./configured-discount.js');
 
 stat.add("count-1", 2);
 stat.add("count-2", 3);
