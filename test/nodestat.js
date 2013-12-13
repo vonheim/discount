@@ -7,6 +7,8 @@ buster.testCase("nodestat", {
     "nodestat.stat()": function() {
 
         nodestat.stat().add("fisk", 2);
+
+        nodestat.widgets = [new nodestat.widget.PieChart({})];
         assert(nodestat.stat());
         setTimeout(function() {nodestat}, 60000);
     },

@@ -1,0 +1,39 @@
+<script type="text/javascript">
+  window.onload = function () {
+
+  var datapoints = [];
+  <% _.each(set.sortedKeys(), function(key) { %>
+    datapoints[datapoints.length] = {
+      y:     "<%= set.get(key) %>",
+      label: "<%= key %>: <%= set.get(key) %>",
+      legendText: "<%= key %>"
+    };
+  <% }) %>
+
+  var chart = new CanvasJS.Chart("chartContainer",
+  {
+    legend:{
+      verticalAlign: "center",
+      horizontalAlign: "left",
+      fontSize: 20,
+      fontFamily: "Helvetica"        
+    },
+    theme: "theme2",
+    data: [
+      {        
+        type: "pie",       
+        indexLabelFontFamily: "Garamond",       
+        indexLabelFontSize: 20,
+        startAngle:-20,      
+        showInLegend: true,
+        toolTipContent:"{label}",
+        dataPoints: datapoints
+      }
+    ]
+  });
+  
+  chart.render();
+  }
+</script>
+
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>

@@ -1,10 +1,11 @@
 "use strict";
 var _ = require('underscore');
 
-var List = require('./widget.list.js'),
-    Set  = require('./set.js'),
-    app  = require('./express.js'),
-    http = require('http');
+var List     = require('./widget.list.js'),
+    PieChart = require('./widget.piechart.js'),
+    Set      = require('./set.js'),
+    app      = require('./express.js'),
+    http     = require('http');
 
 
 function NodeStat() {
@@ -21,7 +22,8 @@ function NodeStat() {
 
 NodeStat.prototype = {
     widget: {
-        List: List
+        "List": List,
+        "PieChart": PieChart
     },
 
     widgets: [new List({name:"All keys"})],
