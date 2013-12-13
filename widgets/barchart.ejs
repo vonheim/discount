@@ -1,39 +1,38 @@
 
+
+<div id="chart-<%= widgetIndex %>" style="height: 300px; width: 100%;"></div>
+
 <script type="text/javascript">
-  window.onload = function () {
+  var dataPoints = [];
+  <% _.each(set.sortedKeys(), function(key) { %>
+    dataPoints[dataPoints.length] = { "y": <%= set.get(key) %>, label: "<%= key %>"};
+  <% }) %>
 
-    var dataPoints = [];
-    <% _.each(set.sortedKeys(), function(key) { %>
-      dataPoints[dataPoints.length] = { "y": <%= set.get(key) %>, label: "<%= key %>"};
-    <% }) %>
+  var chart = new CanvasJS.Chart("chart-<%= widgetIndex %>", {
+    axisX:{
+      interval: 1,
+      gridThickness: 0,
+      labelFontSize: 10,
+      labelFontStyle: "normal",
+      labelFontWeight: "normal",
+      labelFontFamily: "Lucida Sans Unicode"
+    },
+    axisY2:{
+      interlacedColor: "rgba(1,77,101,.2)",
+      gridColor: "rgba(1,77,101,.1)"
+    },
+    data: [{
+      type: "bar",
+      name: "companies",
+      axisYType: "secondary",
+      color: "#014D65",
+      dataPoints: dataPoints,
+    }]
+  });
 
-    var chart = new CanvasJS.Chart("chartContainer", {
-      axisX:{
-        interval: 1,
-        gridThickness: 0,
-        labelFontSize: 10,
-        labelFontStyle: "normal",
-        labelFontWeight: "normal",
-        labelFontFamily: "Lucida Sans Unicode"
-      },
-      axisY2:{
-        interlacedColor: "rgba(1,77,101,.2)",
-        gridColor: "rgba(1,77,101,.1)"
-      },
-      data: [{
-        type: "bar",
-        name: "companies",
-        axisYType: "secondary",
-        color: "#014D65",
-        dataPoints: dataPoints,
-      }]
-    });
-
-    chart.render();
-  }
+  chart.render();
 </script>
 
 
 
-<div id="chartContainer" style="height: 300px; width: 100%;"></div>
 

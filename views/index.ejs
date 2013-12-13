@@ -6,10 +6,10 @@
     <img src="/img/stats.jpg" />
 
 
-  <% _.each(nodestat.widgets, function(widget) { %>
+  <% _.each(nodestat.widgets, function(widget, widgetIndex) { %>
     <h2><%= widget.name %></h2>
 
-    <%- widget.process(nodestat.stat()) %>
+    <%- widget.process(nodestat.stat(), widgetIndex) %>
 
   <% }); %>
 

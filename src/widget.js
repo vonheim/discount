@@ -14,9 +14,9 @@ Widget.prototype = {
         var template = fs.readFileSync(__dirname + '/../widgets/'+ this.type +'.ejs', 'utf8');
         return ejs.render(template, args);
     },
-    process: function(set) {
+    process: function(set, widgetIndex) {
         var relevant = set.subset(this.match || '.*');
-        return this.render({set: relevant, "_": _ });
+        return this.render({set: relevant, widgetIndex: widgetIndex, "_": _ });
     }
 }
 
