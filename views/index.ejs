@@ -7,7 +7,9 @@
 
 
   <% _.each(nodestat.widgets, function(widget, widgetIndex) { %>
-    <h2><%= widget.name %></h2>
+    <% if( widget.name ) { %>
+      <h2><%= widget.name %></h2>
+    <% } %>
 
     <%- widget.process(nodestat.stat(), widgetIndex) %>
 
