@@ -2,13 +2,12 @@
 
 
 var Widget = require('./widget.js'),
+    _      = require('underscore'),
     util   = require('util');
 
 
 function List(args) {
-    args = args || {};
-    this.name = args.name;
-    this.type = 'list';
+    _.defaults(this, {type: 'list'}, args||{});
 }
 
 

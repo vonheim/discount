@@ -2,13 +2,12 @@
 
 
 var Widget = require('./widget.js'),
+    _      = require('underscore'),
     util   = require('util');
 
 
 function BarChart(args) {
-    args = args || {};
-    this.name = args.name;
-    this.type = 'barchart';
+    _.defaults(this, {type: 'barchart'}, args||{});
 }
 
 

@@ -2,13 +2,12 @@
 
 
 var Widget = require('./widget.js'),
+    _      = require('underscore'),
     util   = require('util');
 
 
 function PieChart(args) {
-    args = args || {};
-    this.name = args.name;
-    this.type = 'piechart';
+    _.defaults(this, {type: 'piechart'}, args||{});
 }
 
 
