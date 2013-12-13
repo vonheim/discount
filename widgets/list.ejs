@@ -1,17 +1,14 @@
 
+<% if( set.size==0 ) { %>
+  No statistics yet...
+<% } %>
 
-
-List template
-
-
-<ul>
-<% _.each(set.sortedKeys(), function(key) { %>
-
-  <%= key %> - <%= set.get(key) %>
-
-<% }) %>
-
-
-</ul>
-
+<table>
+  <% _.each(set.sortedKeys(), function(key) { %>
+    <tr>
+      <td><%= key %></td>
+      <td><%= set.get(key) %></td>
+    </tr>
+  <% }) %>
+</table>
 
